@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TORNEO CLASH - 30 DE JUNIO</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Anton&display=swap');
+    
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: #0a001f;
+      color: white;
+      text-align: center;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://i.imgur.com/Brillo.png') center/cover no-repeat;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 4.5rem;
+      color: #ffcc00;
+      text-shadow: 0 0 30px #ffcc00;
+      margin: 10px 0;
+    }
+    .subtitle {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .countdown {
+      font-size: 2.3rem;
+      background: rgba(0,0,0,0.85);
+      padding: 30px;
+      border-radius: 20px;
+      margin: 30px auto;
+      max-width: 700px;
+      border: 3px solid #ffcc00;
+    }
+    .premios {
+      padding: 60px 20px;
+      background: rgba(255,215,0,0.08);
+    }
+    .boton {
+      background: #ffcc00;
+      color: black;
+      padding: 18px 50px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>TORNEO CLASH</h1>
+    <p class="subtitle">30 DE JUNIO</p>
+    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+  </div>
+
+  <section class="premios">
+    <h2>PREMIOS</h2>
+    <h3>🥇 TOP 1 → $60 USD</h3>
+    <h3>🥈 TOP 2 → $30 USD</h3>
+    <h3>🥉 TOP 3 → $15 USD</h3>
+    <p><strong>Costo de Entrada:</strong> 100 monedas</p>
+  </section>
+
+  <script>
+    // Cambia la hora aquí si es necesario (formato: Año-Mes-DíaTHora:Minuto)
+    const fechaEvento = new Date("2026-06-30T20:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = fechaEvento - ahora;
+
+      const dias = Math.floor(distancia / (1000*60*60*24));
+      const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
+      const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
+      const segundos = Math.floor((distancia % (1000*60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+      if (distancia < 0) {
+        document.getElementById("countdown").innerHTML = "¡EL TORNEO YA COMENZÓ!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
