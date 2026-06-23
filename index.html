@@ -135,11 +135,17 @@
     }
 
     .host {
-      margin: 10px 0;
-      padding: 12px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 10px;
-    }
+  margin: 10px 0;
+  padding: 12px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.host:hover {
+  transform: translateX(10px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+}
 
     .btn {
       background: linear-gradient(45deg, #ffcc00, #ff9900);
