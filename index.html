@@ -54,35 +54,57 @@
       border: 3px solid #ffcc00;
     }
 
-    .premios {
-      padding: 60px 20px;
-      background: #0f001f;
-      text-align: center;
-      color: white;
-    }
+.premios {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    .premios h2 {
-      color: #fff;
-      font-size: 2rem;
-      margin-bottom: 25px;
-    }
+  padding: 60px 20px;
+  background: radial-gradient(circle at top, #1a0033, #0a001f);
+  text-align: center;
+  color: white;
+}
 
-    .premios h3 {
-      color: #e6e6e6;
-      font-size: 1.3rem;
-      margin: 15px 0;
-      transition: 0.2s;
-    }
+/* Caja tipo “card” */
+.premios-box {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #ffcc00;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
 
-    .premios h3:hover {
-      transform: translateX(5px);
-      color: #fff;
-    }
+  box-shadow: 0 0 40px rgba(255, 204, 0, 0.15);
+  backdrop-filter: blur(6px);
+}
 
-    .premios p {
-      color: #bdbdbd;
-    }
+/* Título */
+.premios h2 {
+  font-size: 2.2rem;
+  color: #ffcc00;
+  text-shadow: 0 0 20px #ffcc00;
+  margin-bottom: 25px;
+}
 
+/* Items */
+.premios h3 {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.premios h3:hover {
+  transform: translateX(10px);
+  color: #fff;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+.premios p {
+  color: #ccc;
+  margin-top: 10px;
+}
     .boton {
       background: #ffcc00;
       color: black;
