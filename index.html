@@ -23,7 +23,7 @@
       justify-content: center;
     }
     h1 {
-      font-size: 4.5rem;
+      font-size: 3rem;
       color: #ffcc00;
       text-shadow: 0 0 30px #ffcc00;
       margin: 10px 0;
@@ -55,22 +55,64 @@
       cursor: pointer;
       margin: 20px;
     }
+
+    html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+    
   </style>
 </head>
 <body>
 
-  <div class="hero">
+  <!-- PÁGINA 1 -->
+  <section class="hero" id="inicio">
     <h1>TORNEO CLASH</h1>
     <p class="subtitle">30 DE JUNIO</p>
     <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
-  </div>
 
-  <section class="premios">
-    <h2>PREMIOS</h2>
+    <a href="#info">
+      <button class="boton">↓ VER INFO</button>
+    </a>
+  </section>
+
+  <!-- PÁGINA 2 -->
+  <section id="info" class="premios">
+    <h2>🏆 PREMIOS</h2>
     <h3>🥇 TOP 1 → $60 USD</h3>
     <h3>🥈 TOP 2 → $30 USD</h3>
     <h3>🥉 TOP 3 → $15 USD</h3>
+
     <p><strong>Costo de Entrada:</strong> 100 monedas</p>
+    <p><strong>Cómo se paga:</strong> Por Discord con el host</p>
+
+    <a href="#patrocinador">
+      <button class="boton">↓ SIGUIENTE</button>
+    </a>
+  </section>
+
+  <!-- PÁGINA 3 -->
+  <section id="patrocinador">
+    <h2>🤝 PATROCINADOR</h2>
+    <h3>Cristian CB</h3>
+
+    <p>Servidor oficial del torneo</p>
+
+    <a href="https://discord.gg/TU_LINK" target="_blank">
+      <button class="boton">ENTRAR A DISCORD</button>
+    </a>
+
+    <a href="#inicio">
+      <button class="boton">⬆ VOLVER ARRIBA</button>
+    </a>
   </section>
 
   <script>
@@ -96,3 +138,4 @@
   </script>
 </body>
 </html>
+Agregar 3 secciones a la página
