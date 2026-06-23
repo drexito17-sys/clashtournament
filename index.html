@@ -107,6 +107,106 @@ section {
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
   font-size: 2rem;
 }
+  .esports-section {
+  background: radial-gradient(circle at top, #1a0033, #0a001f);
+  box-shadow: inset 0 0 120px rgba(255, 204, 0, 0.08);
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #ffcc00;
+  text-shadow: 0 0 20px #ffcc00;
+  margin-bottom: 20px;
+}
+
+.sub {
+  color: #fff;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+.card {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #ffcc00;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.2);
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(255, 204, 0, 0.5);
+}
+
+.legendary {
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 30px #ffd700;
+}
+
+.hosts {
+  list-style: none;
+  padding: 0;
+}
+
+.host {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background: rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.host:hover {
+  transform: translateX(8px);
+}
+
+.dorado {
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+.hielo {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.dragon {
+  color: #b300ff;
+  text-shadow: 0 0 10px #b300ff;
+}
+
+.server {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.btn {
+  background: linear-gradient(45deg, #ffcc00, #ff9900);
+  color: black;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.8);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0,240,255,0.3);
+}
     
   </style>
 </head>
@@ -138,37 +238,37 @@ section {
     </a>
   </section>
 
- <!-- PÁGINA 3 -->
-<section id="patrocinador">
-  <h2>🤝 PATROCINADOR</h2>
+<!-- PÁGINA 3 -->
+<section id="patrocinador" class="esports-section">
+  <h2 class="title">🤝 PATROCINADOR</h2>
 
-  <h3 class="diamante">⭐ Cristian CB ⭐</h3>
+  <div class="card legendary">
+    <h3 class="diamante">⭐ Cristian CB ⭐</h3>
+    <p>Patrocinador oficial del torneo.</p>
+  </div>
 
-  <p>Patrocinador oficial del torneo.</p>
+  <h3 class="sub">⚔️ HOSTS</h3>
 
-  <h3>⚔️ HOSTS</h3>
-
-  <ul style="list-style: none; padding: 0;">
-    <li class="dorado">S☀️LRAC✅☔🏎️</li>
-    <li class="hielo">Frostdcrischuiikatsu🏎️🐉</li>
-    <li class="dragon">KatsuDfrost🐉🏎️</li>
+  <ul class="hosts">
+    <li class="host dorado">S☀️LRAC✅☔🏎️</li>
+    <li class="host hielo">Frostdcrischuiikatsu🏎️🐉</li>
+    <li class="host dragon">KatsuDfrost🐉🏎️</li>
   </ul>
+
+  <p class="server">Servidor oficial del torneo</p>
+
+  <a href="https://discord.gg/r3EsTeU75" target="_blank">
+    <button class="btn">ENTRAR A DISCORD</button>
+  </a>
+
+  <a href="#inicio">
+    <button class="btn secondary">⬆ VOLVER ARRIBA</button>
+  </a>
 </section>
-  
-    <p>Servidor oficial del torneo</p>
-
-    <a href="https://discord.gg/r3EsTeU75" target="_blank">
-      <button class="boton">ENTRAR A DISCORD</button>
-    </a>
-
-    <a href="#inicio">
-      <button class="boton">⬆ VOLVER ARRIBA</button>
-    </a>
-  </section>
 
   <script>
     // Cambia la hora aquí si es necesario (formato: Año-Mes-DíaTHora:Minuto)
-    const fechaEvento = new Date("2026-06-30T20:00:00").getTime();
+    const fechaEvento = new Date("2026-07-01T20:00:00").getTime();
 
     const countdown = setInterval(() => {
       const ahora = new Date().getTime();
