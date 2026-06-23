@@ -42,8 +42,42 @@
       border: 3px solid #ffcc00;
     }
     .premios {
-      padding: 60px 20px;
-      background: rgba(255,215,0,0.08);
+  padding: 60px 20px;
+  background: radial-gradient(circle at top, rgba(255, 204, 0, 0.08), transparent);
+}
+
+/* Título de premios */
+.premios h2 {
+  color: #ffcc00;
+  text-shadow:
+    0 0 6px #ffcc00,
+    0 0 15px rgba(255, 204, 0, 0.6);
+  font-size: 2rem;
+}
+
+/* Cada premio */
+.premios h3 {
+  color: #ffffff;
+  text-shadow:
+    0 0 5px rgba(255,255,255,0.6),
+    0 0 10px rgba(255, 204, 0, 0.4);
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+/* Hover tipo esports */
+.premios h3:hover {
+  transform: scale(1.03);
+  text-shadow:
+    0 0 8px #ffcc00,
+    0 0 18px rgba(255, 204, 0, 0.7);
+}
+
+/* Texto normal */
+.premios p {
+  color: #ccc;
+  text-shadow: 0 0 6px rgba(255,255,255,0.2);
+}
     }
     .boton {
       background: #ffcc00;
