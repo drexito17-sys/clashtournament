@@ -57,64 +57,75 @@
 .premios {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   padding: 60px 20px;
-  background: radial-gradient(circle at top, #1a0033, #0a001f);
-  text-align: center;
-  color: white;
+  background: #0a0a0f; /* más serio */
+  color: #e5e5e5;
 }
 
-/* Caja tipo “card” */
+/* Caja principal */
 .premios-box {
-  background: rgba(0,0,0,0.6);
-  border: 2px solid #ffcc00;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 600px;
+  background: rgba(18, 18, 24, 0.95);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+
+  padding: 35px;
+  max-width: 520px;
   width: 100%;
 
-  box-shadow: 0 0 40px rgba(255, 204, 0, 0.15);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  text-align: left;
 }
 
 /* Título */
 .premios h2 {
-  font-size: 2.2rem;
-  color: #ffcc00;
-  text-shadow: 0 0 20px #ffcc00;
-  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
 
-/* Items */
+/* Líneas más limpias */
 .premios h3 {
-  font-size: 1.3rem;
-  margin: 15px 0;
-  transition: 0.3s;
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 400;
+  color: #d6d6d6;
+  transition: 0.2s;
 }
 
 .premios h3:hover {
-  transform: translateX(10px);
-  color: #fff;
-  text-shadow: 0 0 10px #ffcc00;
+  color: #ffffff;
 }
 
+/* Texto */
 .premios p {
-  color: #ccc;
+  font-size: 14px;
+  color: #bdbdbd;
   margin-top: 10px;
 }
-    .boton {
-      background: #ffcc00;
-      color: black;
-      padding: 18px 50px;
-      font-size: 1.5rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin: 20px;
-    }
+
+/* Botón serio */
+.boton {
+  margin-top: 20px;
+  padding: 12px 22px;
+
+  background: #ffffff;
+  color: #000;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.boton:hover {
+  background: #e6e6e6;
+}
 
     html {
       scroll-behavior: smooth;
