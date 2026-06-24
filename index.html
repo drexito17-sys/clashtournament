@@ -53,7 +53,31 @@
       max-width: 700px;
       border: 3px solid #ffcc00;
     }
+    
+.live-grid{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  gap:20px;
+  max-width:1200px;
+  margin:auto;
+}
 
+.next-live{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,215,0,.4);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+}
+
+#live-countdown{
+  font-size:2rem;
+  font-weight:bold;
+  color:#ffd700;
+  text-shadow:0 0 10px #ffd700;
+}
+    
 .premios {
   min-height: 100vh;
   display: flex;
@@ -61,12 +85,12 @@
   align-items: center;
 
   padding: 60px 20px;
-  background: #0a0a0f; /* más serio */
+  background: #0a0a0f;
   color: #e5e5e5;
 }
     
 .card h3 a {
-  color: #00e5ff; /* cian */
+  color: #00e5ff;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -79,7 +103,6 @@
     0 0 30px #00ffff;
 }
     
-/* Caja principal */
 .premios-box {
   background: rgba(18, 18, 24, 0.95);
   border: 1px solid rgba(255,255,255,0.08);
@@ -93,7 +116,6 @@
   text-align: left;
 }
 
-/* Título */
 .premios h2 {
   font-size: 22px;
   font-weight: 600;
@@ -101,7 +123,6 @@
   margin-bottom: 15px;
 }
 
-/* Líneas más limpias */
 .premios h3 {
   font-size: 16px;
   margin: 10px 0;
@@ -152,14 +173,12 @@
   text-shadow: 0 0 10px #5C4033, 0 0 20px #5C4033;
 }
     
-/* Texto */
 .premios p {
   font-size: 14px;
   color: #bdbdbd;
   margin-top: 10px;
 }
 
-/* Botón serio */
 .boton {
   margin-top: 20px;
   padding: 12px 22px;
@@ -179,47 +198,43 @@
   background: #e6e6e6;
 }
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    section {
-      min-height: 100vh;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    .dorado { color: #ffd700; }
-    .hielo { color: #00eaff; }
-    .dragon { color: #b300ff; }
+.esports-section {
+  background: radial-gradient(circle at top, #1a0033, #0a001f);
+}
 
-    .esports-section {
-      background: radial-gradient(circle at top, #1a0033, #0a001f);
-    }
+.title {
+  font-size: 2.2rem;
+  color: #ffcc00;
+  text-shadow: 0 0 20px #ffcc00;
+}
 
-    .title {
-      font-size: 2.2rem;
-      color: #ffcc00;
-      text-shadow: 0 0 20px #ffcc00;
-    }
+.card {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #ffcc00;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+}
 
-    .card {
-      background: rgba(0,0,0,0.6);
-      border: 2px solid #ffcc00;
-      padding: 20px;
-      border-radius: 15px;
-      margin: 15px 0;
-    }
+.hosts {
+  list-style: none;
+  padding: 0;
+}
 
-    .hosts {
-      list-style: none;
-      padding: 0;
-    }
-
-    .host {
+.host {
   margin: 10px 0;
   padding: 12px;
   background: rgba(0,0,0,0.5);
@@ -232,28 +247,28 @@
   box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
 }
 
-    .btn {
-      background: linear-gradient(45deg, #ffcc00, #ff9900);
-      color: black;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin: 10px;
-    }
+.btn {
+  background: linear-gradient(45deg, #ffcc00, #ff9900);
+  color: black;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+}
 
-    .btn.secondary {
-      background: transparent;
-      border: 2px solid #00f0ff;
-      color: #00f0ff;
-    }
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #00f0ff;
+  color: #00f0ff;
+}
 
-    @keyframes moveBg {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+@keyframes moveBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
   </style>
 </head>
 
@@ -263,7 +278,10 @@
   <section class="hero" id="inicio">
     <h1>TORNEO CLASH</h1>
     <p class="subtitle">3 DE JULIO</p>
-    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+
+    <div class="countdown" id="event-countdown">
+      Cargando cuenta regresiva...
+    </div>
 
     <a href="#info">
       <button class="boton">↓ VER INFO</button>
@@ -291,6 +309,7 @@
   </div>
 
 </section>
+
 <!-- PATROCINADOR -->
 <section id="patrocinador" class="esports-section">
   <h2 class="title">🤝 PATROCINADOR</h2>
@@ -298,80 +317,96 @@
   <div class="card">
     <h3>
       <a href="https://www.tiktok.com/@cristianbueno077"
-         target="_blank"
-         rel="noopener noreferrer">
+         target="_blank">
          ⭐ Cristian CB ⭐
       </a>
     </h3>
     <p>Patrocinador oficial del torneo</p>
   </div>
 
-    <h3>⚔️ HOSTS</h3>
+  <h3>⚔️ HOSTS</h3>
 
-<ul class="hosts">
-  <li class="host solrac">
-    <a href="https://www.tiktok.com/@solrrac_2003" target="_blank">
-      S☀️LRAC✅☔🏎️
-    </a>
-  </li>
+  <ul class="hosts">
+    <li class="host solrac"><a href="https://www.tiktok.com/@solrrac_2003">S☀️LRAC</a></li>
+    <li class="host frost"><a href="https://www.tiktok.com/@frosttvrace">Frostdcrischuiikatsu</a></li>
+    <li class="host katsu"><a href="https://www.tiktok.com/@katsumitsu3">KatsuDfrost</a></li>
+    <li class="host enrique"><a href="https://www.tiktok.com/@enriquearias74">Enrique CB</a></li>
+    <li class="host churro"><a href="https://www.tiktok.com/@churro_cr">Churro_cr</a></li>
+  </ul>
 
-  <li class="host frost">
-    <a href="https://www.tiktok.com/@frosttvrace" target="_blank">
-      Frostdcrischuiikatsu🏎️🐉
-    </a>
-  </li>
+  <a href="https://discord.gg/r3EsTeU75" target="_blank">
+    <button class="btn">ENTRAR A DISCORD</button>
+  </a>
 
-  <li class="host katsu">
-    <a href="https://www.tiktok.com/@katsumitsu3" target="_blank">
-      KatsuDfrost🐉🏎️
-    </a>
-  </li>
+</section>
 
-  <li class="host enrique">
-    <a href="https://www.tiktok.com/@enriquearias74" target="_blank">
-      Enrique CB🫂👻
-    </a>
-  </li>
+<!-- LIVE -->
+<section class="live-section">
 
-  <li class="host churro">
-    <a href="https://www.tiktok.com/@churro_cr"
-       target="_blank"
-       rel="noopener noreferrer">
-       Churro_cr
-    </a>
-  </li>
-</ul>
-  
-    <a href="https://discord.gg/r3EsTeU75" target="_blank">
-      <button class="btn">ENTRAR A DISCORD</button>
-    </a>
+  <div class="live-grid">
 
-    <a href="#inicio">
-      <button class="btn secondary">⬆ VOLVER ARRIBA</button>
-    </a>
-  </section>
+    <div class="live-video">
+      <iframe src="https://www.youtube.com/embed/TU_ID" allowfullscreen></iframe>
+    </div>
 
-  <script>
-    const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
+    <div class="next-live">
+      <h3>🔴 PRÓXIMO LIVE</h3>
+      <div id="live-countdown">00:00:00</div>
+      <p>Inicio del stream</p>
+    </div>
 
-    setInterval(() => {
-      const ahora = new Date().getTime();
-      const distancia = fechaEvento - ahora;
+  </div>
 
-      const dias = Math.floor(distancia / (1000*60*60*24));
-      const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
-      const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
-      const segundos = Math.floor((distancia % (1000*60)) / 1000);
+</section>
 
-      document.getElementById("countdown").innerHTML =
-        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+<!-- JS -->
+<script>
+const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
 
-      if (distancia < 0) {
-        document.getElementById("countdown").innerHTML = "¡EL TORNEO YA COMENZÓ!";
-      }
-    }, 1000);
-  </script>
+/* TORNEO */
+setInterval(() => {
+  const ahora = new Date().getTime();
+  const distancia = fechaEvento - ahora;
 
+  const dias = Math.floor(distancia / (1000*60*60*24));
+  const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
+  const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
+  const segundos = Math.floor((distancia % (1000*60)) / 1000);
+
+  const el = document.getElementById("event-countdown");
+  if (!el) return;
+
+  el.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+  if (distancia < 0) {
+    el.innerHTML = "¡EL TORNEO YA COMENZÓ!";
+  }
+}, 1000);
+
+/* LIVE */
+setInterval(() => {
+  const ahora = new Date().getTime();
+  const distancia = fechaEvento - ahora;
+
+  const el = document.getElementById("live-countdown");
+  if (!el) return;
+
+  if (distancia <= 0) {
+    el.innerHTML = "🔴 EN VIVO";
+    return;
+  }
+
+  const horas = Math.floor(distancia / (1000*60*60));
+  const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
+  const segundos = Math.floor((distancia % (1000*60)) / 1000);
+
+  el.innerHTML = `${horas}h ${minutos}m ${segundos}s`;
+
+}, 1000);
+</script>
+
+</body>
+</html>
 </body>
 </html>
 Drexian estuvo aqui
