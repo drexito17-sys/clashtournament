@@ -6,7 +6,7 @@
   <title>TORNEO CLASH - 1 DE JULIO - info en discord</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Anton&display=swap');
-    
+   
     body {
       margin: 0;
       padding: 0;
@@ -41,17 +41,19 @@
       border: 3px solid #ffcc00;
     }
 
-    /* ==================== LIVE GRID ==================== */
-    .live-grid{
-      display: grid;
-      grid-template-columns: 1.5fr 2.5fr;   /* ← Pantallita mucho más grande */
-      gap: 35px;
-      max-width: 1550px;
-      margin: 40px auto;
-      padding: 0 20px;
+    /* ==================== NUEVO DISEÑO LIVE ==================== */
+    .live-section {
+      padding: 40px 20px;
     }
 
-    /* Video de YouTube */
+    .live-grid{
+      display: grid;
+      grid-template-columns: 2.8fr 1.2fr;
+      gap: 25px;
+      max-width: 1550px;
+      margin: 0 auto 30px auto;
+    }
+
     .live-video {
       position: relative;
       padding-top: 56.25%;
@@ -68,49 +70,47 @@
       border: none;
     }
 
-    /* Pantallita del Próximo Live - MÁS GRANDE */
-    .next-live{
-      background: rgba(255,255,255,.1);
-      border: 3px solid rgba(255,215,0,.9);
-      border-radius: 24px;
-      padding: 55px 35px;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      min-height: 420px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    .chat-live {
+      background: rgba(255,255,255,.08);
+      border: 2px solid rgba(0, 255, 100, 0.4);
+      border-radius: 20px;
+      padding: 20px;
+      min-height: 380px;
+      color: #00ff88;
+      font-size: 1rem;
+      text-align: left;
     }
 
-    .next-live h3 {
-      font-size: 1.75rem;
-      margin-bottom: 20px;
+    .countdown-live {
+      background: rgba(255,215,0,.1);
+      border: 3px solid #ffd700;
+      border-radius: 20px;
+      padding: 35px 20px;
+      max-width: 1550px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+    }
+
+    .countdown-live h3 {
+      font-size: 1.8rem;
       color: #ffd700;
-      text-shadow: 0 0 12px #ffd700;
+      margin-bottom: 15px;
     }
 
     #live-countdown{
-      font-size: 1.85rem;           /* ← Contador más pequeño */
+      font-size: 3rem;
       font-weight: bold;
       color: #ffd700;
-      text-shadow: 0 0 18px #ffd700;
+      text-shadow: 0 0 25px #ffd700;
       margin: 15px 0;
-      line-height: 1.1;
-    }
-
-    .next-live p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.95;
     }
 
     /* Responsive */
     @media (max-width: 900px) {
       .live-grid { grid-template-columns: 1fr; gap: 25px; }
-      .next-live { min-height: 320px; padding: 40px 25px; }
-      #live-countdown { font-size: 2rem; }
+      .chat-live { min-height: 280px; }
+      #live-countdown { font-size: 2.4rem; }
     }
 
     /* === Resto de estilos === */
@@ -131,7 +131,6 @@
 
     .host a{ display: block; color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
     .host a:hover{ color: #ffd700; text-shadow: 0 0 10px #ffd700; }
-
     .premios p { font-size: 14px; color: #bdbdbd; margin-top: 10px; }
 
     .boton {
@@ -247,12 +246,19 @@
       <div class="live-video">
         <iframe src="https://www.youtube.com/embed/TU_ID" allowfullscreen></iframe>
       </div>
-      <div class="next-live">
-        <h3>🔴 PRÓXIMO LIVE</h3>
-        <div id="live-countdown">00:00:00</div>
-        <p>Inicio del stream</p>
+      <div class="chat-live">
+        <h3>💬 CHAT DEL LIVE</h3>
+        <p>Chat aparecerá aquí cuando esté en vivo...</p>
       </div>
     </div>
+
+    <!-- Contador grande abajo -->
+    <div class="countdown-live">
+      <h3>🔴 PRÓXIMO LIVE</h3>
+      <div id="live-countdown">00:00:00</div>
+      <p>Inicio del stream</p>
+    </div>
+
     <a href="#inicio"><button class="btn secondary">inicio</button></a>
   </section>
 
