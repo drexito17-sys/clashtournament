@@ -38,69 +38,10 @@
       max-width: 700px;
       border: 3px solid #ffcc00;
     }
-
-    /* ==================== NUEVA SECCIÓN COMBINADA ==================== */
-    .torneo-info {
-      padding: 60px 20px;
-      background: #0a0a0f;
+    /* ==================== NUEVO DISEÑO LIVE ==================== */
+    .live-section {
+      padding: 40px 20px;
     }
-    .torneo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      max-width: 1100px;
-      margin: 0 auto;
-      gap: 0;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    }
-    .requisitos, .premios-side {
-      padding: 35px;
-    }
-    .requisitos {
-      background: rgba(18, 18, 24, 0.95);
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
-    .premios-side {
-      background: rgba(18, 18, 24, 0.95);
-    }
-    .gold-box {
-      background: rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 25px;
-    }
-    .section-title {
-      font-size: 1.8rem;
-      color: #ffcc00;
-      margin-bottom: 20px;
-    }
-    .tik-tok-list a {
-      display: block;
-      color: #00f0ff;
-      text-decoration: none;
-      padding: 8px 0;
-      transition: 0.3s;
-    }
-    .tik-tok-list a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 10px #00ffff;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .torneo-grid {
-        grid-template-columns: 1fr;
-      }
-      .requisitos {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-    }
-
-    /* Resto de tus estilos originales */
-    .live-section { padding: 40px 20px; }
     .live-grid{
       display: grid;
       grid-template-columns: 2.8fr 1.2fr;
@@ -142,9 +83,42 @@
       text-align: center;
       box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
     }
-    .premios { display: none; } /* Ocultamos la antigua */
-
-    /* Botones y demás estilos originales */
+    .countdown-live h3 {
+      font-size: 1.8rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+    #live-countdown{
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 25px #ffd700;
+      margin: 15px 0;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .live-grid { grid-template-columns: 1fr; gap: 25px; }
+      .chat-live { min-height: 280px; }
+      #live-countdown { font-size: 2.4rem; }
+    }
+    /* === Resto de estilos === */
+    .premios { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 60px 20px; background: #0a0a0f; color: #e5e5e5; }
+    .premios-box {
+      background: rgba(18, 18, 24, 0.95);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 35px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      text-align: left;
+    }
+    .premios h2 { font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 15px; }
+    .premios h3 { font-size: 16px; margin: 10px 0; font-weight: 400; color: #d6d6d6; }
+    .premios h3:hover { color: #ffffff; }
+    .host a{ display: block; color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .host a:hover{ color: #ffd700; text-shadow: 0 0 10px #ffd700; }
+    .premios p { font-size: 14px; color: #bdbdbd; margin-top: 10px; }
     .boton {
       margin-top: 20px;
       padding: 12px 22px;
@@ -196,10 +170,148 @@
       border: 2px solid #00f0ff;
       color: #00f0ff;
     }
+    /* ==================== ESTILOS DE PATROCINADOR Y HOSTS ==================== */
+    .card h3 a {
+      color: #00e5ff;
+      text-decoration: none;
+      transition: 0.3s;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+    .card h3 a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff,
+                   0 0 25px #00ffff,
+                   0 0 35px #00ffff;
+    }
+    /* Colores específicos de Hosts */
+    .solrac a:hover {
+      color: #FFC512 !important;
+      text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important;
+    }
+    .frost a:hover {
+      color: #AFEEEE !important;
+      text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important;
+    }
+    .katsu a:hover {
+      color: #FF6F61 !important;
+      text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important;
+    }
+    .enrique a:hover {
+      color: #FFD700 !important;
+      text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important;
+    }
+    .churro a:hover {
+      color: #A9806A !important;
+      text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important;
+    }
+    /* ==================== ESTILOS PARTICIPANTES ==================== */
+    .participantes-section {
+      background: radial-gradient(circle at top, #1a0033, #0a001f);
+    }
+    .rotador, .participantes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1300px;
+      margin: 25px auto;
+    }
+    .participant-card {
+      background: rgba(0,0,0,0.85);
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .participant-card:hover {
+      border-color: #ffd700;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    }
+    .player-name {
+      font-size: 1.15rem;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .player-tag {
+      font-size: 0.95rem;
+      color: #ffd700;
+      font-family: monospace;
+    }
+    .search-box {
+      background: rgba(0,0,0,0.7);
+      border: 2px solid #ffcc00;
+      border-radius: 8px;
+      padding: 15px 20px;
+      width: 100%;
+      max-width: 500px;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      font-size: 1rem;
+      margin: 25px 0;
+    }
+    .search-box:focus {
+      outline: none;
+      border-color: #ffd700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
     @keyframes moveBg {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    /* ==================== NUEVA SECCIÓN COMBINADA (solo esto se agregó) ==================== */
+    .torneo-info {
+      padding: 60px 20px;
+      background: #0a0a0f;
+    }
+    .torneo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .requisitos, .premios-side {
+      padding: 35px;
+    }
+    .requisitos {
+      background: rgba(18, 18, 24, 0.95);
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .premios-side {
+      background: rgba(18, 18, 24, 0.95);
+    }
+    .gold-box {
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 25px;
+    }
+    .tik-tok-list a {
+      display: block;
+      color: #00f0ff;
+      text-decoration: none;
+      padding: 8px 0;
+      transition: 0.3s;
+    }
+    .tik-tok-list a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+    @media (max-width: 900px) {
+      .torneo-grid { grid-template-columns: 1fr; }
+      .requisitos { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
     }
   </style>
 </head>
@@ -212,12 +324,12 @@
     <a href="#info"><button class="boton">↓ VER INFO</button></a>
   </section>
 
-  <!-- NUEVA SECCIÓN COMBINADA -->
+  <!-- NUEVA SECCIÓN COMBINADA (Requisitos + Premios) -->
   <section id="info" class="torneo-info">
     <div class="torneo-grid">
-      <!-- IZQUIERDA: REQUISITOS -->
+      <!-- Izquierda: Requisitos -->
       <div class="requisitos">
-        <h2 class="section-title">🏆 REQUISITOS DEL TORNEO 🏆</h2>
+        <h2 style="color:#ffcc00; margin-bottom:20px;">🏆 REQUISITOS DEL TORNEO 🏆</h2>
         <div class="gold-box">
           <h3 style="color:#ffcc00; text-align:center; margin-bottom:20px;">SEGUIRNOS EN TIKTOK</h3>
           <div class="tik-tok-list">
@@ -232,9 +344,9 @@
         <p style="margin-top: 30px; color:#ffd700;">🎮 ¡MUCHA SUERTE A TODOS!</p>
       </div>
 
-      <!-- DERECHA: PREMIOS -->
+      <!-- Derecha: Premios -->
       <div class="premios-side">
-        <h2 class="section-title">🏆 PREMIOS</h2>
+        <h2 style="color:#ffcc00; margin-bottom:20px;">🏆 PREMIOS</h2>
         <div class="gold-box">
           <h3>🥇 TOP 1 → $60 USD</h3>
           <h3>🥈 TOP 2 → $30 USD</h3>
@@ -270,8 +382,14 @@
   <section class="live-section" id="vivos">
     <div class="live-grid">
       <div class="live-video">
-        <iframe src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0" 
-                title="VAS A CAER AIMEP3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0"
+          title="VAS A CAER AIMEP3"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
       <div class="chat-live">
         <h3>💬 CHAT DEL LIVE</h3>
@@ -297,8 +415,9 @@
     <div id="participantes-grid" class="participantes-grid"></div>
   </section>
 
+  <!-- JS -->
   <script>
-    // (Tu JavaScript completo sin cambios)
+    // ==================== DATOS PARTICIPANTES ====================
     const hosts = [
       { name: "Enrique", tag: "UU8Q2RY82" },
       { name: "Cristian CB", tag: "P8UJJR09Y" },
@@ -311,9 +430,9 @@
       { name: "Mechico", tag: "JL0C8RLPU" },
       { name: "Anabancr", tag: "GYUQQCLV" },
       { name: "Ardentoas", tag: "RP0L2Y8C9" },
+      // Agrega más aquí
     ];
     const allPlayers = [...hosts, ...participantes];
-
     function getRoyaleLink(tag) {
       return tag ? `https://royaleapi.com/player/${tag}` : `https://royaleapi.com/`;
     }
@@ -326,10 +445,12 @@
           ${player.tag ? `<p class="player-tag">#${player.tag}</p>` : ''}
         </div>
       `;
-      card.addEventListener('click', () => window.open(getRoyaleLink(player.tag), '_blank'));
+      card.addEventListener('click', () => {
+        window.open(getRoyaleLink(player.tag), '_blank');
+      });
       return card;
     }
-
+    // Rotador
     function startRotator() {
       const container = document.getElementById('rotador');
       setInterval(() => {
@@ -339,28 +460,30 @@
         selected.forEach(p => container.appendChild(createCard(p)));
       }, 10000);
     }
-
     function renderParticipantes(filtered = allPlayers) {
       const container = document.getElementById('participantes-grid');
       container.innerHTML = '';
       filtered.forEach(p => container.appendChild(createCard(p)));
     }
-
     function setupSearch() {
       const input = document.getElementById('search-input');
       input.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase().trim();
-        renderParticipantes(term ? allPlayers.filter(p => p.name.toLowerCase().includes(term)) : allPlayers);
+        if (!term) {
+          renderParticipantes(allPlayers);
+          return;
+        }
+        const filtered = allPlayers.filter(p => p.name.toLowerCase().includes(term));
+        renderParticipantes(filtered);
       });
     }
-
+    // Inicializar Participantes
     document.addEventListener('DOMContentLoaded', () => {
       startRotator();
       renderParticipantes();
       setupSearch();
     });
-
-    // Contadores
+    // ==================== CONTADORES ====================
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
     setInterval(() => {
       const ahora = new Date().getTime();
@@ -374,7 +497,6 @@
       el.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
       if (distancia < 0) el.innerHTML = "¡EL TORNEO YA COMENZÓ!";
     }, 1000);
-
     setInterval(() => {
       const ahora = new Date().getTime();
       const distancia = fechaEvento - ahora;
