@@ -7,7 +7,7 @@
   <title>TORNEO CLASH - 1 DE JULIO - info en discord</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Anton&display=swap');
-  
+ 
     body {
       margin: 0;
       padding: 0;
@@ -171,40 +171,58 @@
       border: 2px solid #00f0ff;
       color: #00f0ff;
     }
-    /* ==================== ESTILOS DE PATROCINADOR Y HOSTS ==================== */
-.card h3 a {
-  color: #00e5ff;
-  text-decoration: none;
-  transition: 0.3s;
-  text-shadow: 0 0 10px #00e5ff;
-}
-.card h3 a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 15px #00ffff,
-               0 0 25px #00ffff,
-               0 0 35px #00ffff;
-}
-/* Colores específicos de Hosts */
-.solrac a:hover {
-  color: #FFC512 !important;
-  text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important;
-}
-.frost a:hover {
-  color: #AFEEEE !important;
-  text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important;
-}
-.katsu a:hover {
-  color: #FF6F61 !important;
-  text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important;
-}
-.enrique a:hover {
-  color: #FFD700 !important;
-  text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important;
-}
-.churro a:hover {
-  color: #A9806A !important;
-  text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important;
-}
+
+    /* ==================== ESTILOS PARTICIPANTES ==================== */
+    .participantes-section {
+      background: radial-gradient(circle at top, #1a0033, #0a001f);
+    }
+    .participantes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      width: 100%;
+      max-width: 1400px;
+      margin-top: 30px;
+    }
+    .participant-card {
+      background: rgba(0,0,0,0.7);
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .participant-card:hover {
+      border-color: #ffd700;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    }
+    .host-card {
+      border-color: #ffd700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    .player-name {
+      font-size: 1.1rem;
+      margin: 10px 0 5px 0;
+      color: white;
+    }
+    .player-tag {
+      font-size: 0.9rem;
+      color: #ffd700;
+      font-family: monospace;
+    }
+    .search-box {
+      background: rgba(0,0,0,0.6);
+      border: 2px solid #ffcc00;
+      border-radius: 8px;
+      padding: 12px 20px;
+      width: 100%;
+      max-width: 500px;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      margin-bottom: 20px;
+    }
+
     @keyframes moveBg {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -213,6 +231,7 @@
   </style>
 </head>
 <body>
+
   <!-- HERO -->
   <section class="hero" id="inicio">
     <h1>TORNEO CLASH</h1>
@@ -220,6 +239,7 @@
     <div class="countdown" id="event-countdown">Cargando cuenta regresiva...</div>
     <a href="#info"><button class="boton">↓ VER INFO</button></a>
   </section>
+
   <!-- PREMIOS -->
   <section id="info" class="premios">
     <div class="premios-box">
@@ -232,6 +252,7 @@
       <a href="#patrocinador"><button class="boton">↓ SIGUIENTE</button></a>
     </div>
   </section>
+
   <!-- PATROCINADOR -->
   <section id="patrocinador" class="esports-section">
     <h2 class="title">🤝 PATROCINADOR</h2>
@@ -250,25 +271,42 @@
     <a href="https://discord.gg/r3EsTeU75" target="_blank"><button class="btn">ENTRAR A DISCORD</button></a>
     <a href="#vivos"><button class="btn secondary">🔴 VER EN VIVO</button></a>
   </section>
+
+  <!-- ==================== NUEVA SECCIÓN: PARTICIPANTES ==================== -->
+  <section id="participantes" class="participantes-section">
+    <h2 class="title">👥 PARTICIPANTES</h2>
+    <p style="color:#ffcc00; margin-bottom: 30px;">Torneo Clash Royale - 3 de Julio</p>
+
+    <!-- Hosts -->
+    <h3 style="color:#ffd700; margin: 30px 0 15px;">👑 HOSTS</h3>
+    <div id="hosts-grid" class="participantes-grid"></div>
+
+    <!-- Jugadores -->
+    <h3 style="color:#ffcc00; margin: 40px 0 15px;">⚔️ JUGADORES</h3>
+    
+    <input type="text" id="search-input" class="search-box" placeholder="Buscar jugador...">
+
+    <div id="participantes-grid" class="participantes-grid"></div>
+  </section>
+
   <!-- LIVE -->
- <section class="live-section" id="vivos">
-  <div class="live-grid">
-    <div class="live-video">
-      <iframe 
-        src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0" 
-        title="VAS A CAER AIMEP3"
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
+  <section class="live-section" id="vivos">
+    <div class="live-grid">
+      <div class="live-video">
+        <iframe
+          src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0"
+          title="VAS A CAER AIMEP3"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
       <div class="chat-live">
         <h3>💬 CHAT DEL LIVE</h3>
         <p>Chat aparecerá aquí cuando esté en vivo...</p>
       </div>
     </div>
-    <!-- Contador grande abajo -->
     <div class="countdown-live">
       <h3>🔴 PRÓXIMO LIVE</h3>
       <div id="live-countdown">00:00:00</div>
@@ -276,8 +314,81 @@
     </div>
     <a href="#inicio"><button class="btn secondary">inicio</button></a>
   </section>
+
   <!-- JS -->
   <script>
+    // ==================== DATOS PARTICIPANTES ====================
+    const hosts = [
+      { name: "Enrique", tag: "UU8Q2RY82" },
+      { name: "Cristian CB", tag: "P8UJJR09Y" },
+      { name: "Katsu", tag: "RGPCU0V8" },
+      { name: "ChurroCR", tag: "8GYGYCG" }
+    ];
+
+    const participantes = [
+      { name: "Drex", tag: "UJCRRJVVY" },
+      { name: "Juandvx", tag: "J82VJ8YJY" },
+      { name: "Mechico", tag: "JL0C8RLPU" },
+      { name: "Anabancr", tag: "GYUQQCLV" },
+      { name: "Ardentoas", tag: "RP0L2Y8C9" },
+      // Agrega más aquí cuando los confirmes:
+      // { name: "Nombre", tag: "TAG" },
+    ];
+
+    // ==================== FUNCIONES ====================
+    function getRoyaleLink(tag) {
+      return tag ? `https://royaleapi.com/player/${tag}` : `https://royaleapi.com/`;
+    }
+
+    function createCard(player, isHost = false) {
+      const card = document.createElement('div');
+      card.className = `participant-card ${isHost ? 'host-card' : ''}`;
+      
+      card.innerHTML = `
+        <div>
+          <strong class="player-name">${player.name}</strong>
+          ${player.tag ? `<p class="player-tag">#${player.tag}</p>` : ''}
+        </div>
+      `;
+
+      card.addEventListener('click', () => {
+        window.open(getRoyaleLink(player.tag), '_blank');
+      });
+
+      return card;
+    }
+
+    function renderHosts() {
+      const container = document.getElementById('hosts-grid');
+      container.innerHTML = '';
+      hosts.forEach(host => container.appendChild(createCard(host, true)));
+    }
+
+    function renderParticipantes(filtered = participantes) {
+      const container = document.getElementById('participantes-grid');
+      container.innerHTML = '';
+      filtered.forEach(p => container.appendChild(createCard(p)));
+    }
+
+    function setupSearch() {
+      const input = document.getElementById('search-input');
+      input.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = participantes.filter(p => 
+          p.name.toLowerCase().includes(term)
+        );
+        renderParticipantes(filtered);
+      });
+    }
+
+    // Inicializar participantes
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHosts();
+      renderParticipantes();
+      setupSearch();
+    });
+
+    // ==================== CONTADORES EXISTENTES ====================
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
     setInterval(() => {
       const ahora = new Date().getTime();
@@ -291,6 +402,7 @@
       el.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
       if (distancia < 0) el.innerHTML = "¡EL TORNEO YA COMENZÓ!";
     }, 1000);
+
     setInterval(() => {
       const ahora = new Date().getTime();
       const distancia = fechaEvento - ahora;
