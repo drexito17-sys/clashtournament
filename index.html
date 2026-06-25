@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <title>TORNEO CLASH - 1 DE JULIO - info en discord</title>
+  <title>TORNEO CLASH - 3 DE JULIO - info en discord</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Anton&display=swap');
  
@@ -96,7 +96,6 @@
       margin: 15px 0;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .live-grid { grid-template-columns: 1fr; gap: 25px; }
       .chat-live { min-height: 280px; }
@@ -153,7 +152,7 @@
     /* Participantes */
     .participantes-section {
       background: radial-gradient(circle at top, #1a0033, #0a001f);
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
     .rotador, .participantes-grid {
       display: grid;
@@ -170,7 +169,7 @@
       padding: 20px 15px;
       transition: all 0.3s ease;
       cursor: pointer;
-      min-height: 90px;
+      min-height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -201,7 +200,7 @@
       font-family: 'Press Start 2P', cursive;
       color: white;
       font-size: 1rem;
-      margin: 20px 0;
+      margin: 25px 0;
     }
     .search-box:focus {
       outline: none;
@@ -218,15 +217,58 @@
 </head>
 <body>
 
-  <!-- ... (Secciones anteriores: Hero, Premios, Patrocinador, Live) se mantienen iguales ... -->
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <h1>TORNEO CLASH</h1>
+    <p class="subtitle">3 DE JULIO</p>
+    <div class="countdown" id="event-countdown">Cargando cuenta regresiva...</div>
+    <a href="#info"><button class="boton">↓ VER INFO</button></a>
+  </section>
+
+  <!-- PREMIOS -->
+  <section id="info" class="premios">
+    <div class="premios-box">
+      <h2>🏆 PREMIOS</h2>
+      <h3>🥇 TOP 1 → $60 USD</h3>
+      <h3>🥈 TOP 2 → $30 USD</h3>
+      <h3>🥉 TOP 3 → $15 USD</h3>
+      <p><strong>Costo de Entrada:</strong> 100 monedas de TikTok</p>
+      <p><strong>Cómo se paga:</strong> en el live de algún host</p>
+      <a href="#patrocinador"><button class="boton">↓ SIGUIENTE</button></a>
+    </div>
+  </section>
+
+  <!-- PATROCINADOR + HOSTS -->
+  <section id="patrocinador" class="esports-section">
+    <h2 class="title">🤝 PATROCINADOR</h2>
+    <div class="card">
+      <h3><a href="https://www.tiktok.com/@cristianbueno077" target="_blank">⭐ Cristian CB👻🫂🦭🏎️🐉☀️ ⭐</a></h3>
+      <p>Patrocinador oficial del torneo</p>
+    </div>
+    <h3>⚔️ HOSTS</h3>
+    <ul class="hosts">
+      <li class="host solrac"><a href="https://www.tiktok.com/@solrrac_2003">S☀️LRAC✅☔🏎️</a></li>
+      <li class="host frost"><a href="https://www.tiktok.com/@frosttvrace">Frostdcrischuiikatsu🏎️🐉</a></li>
+      <li class="host katsu"><a href="https://www.tiktok.com/@katsumitsu3">KatsuDfrost🐉🏎️</a></li>
+      <li class="host enrique"><a href="https://www.tiktok.com/@enriquearias74">Enrique CB🫂👻</a></li>
+      <li class="host churro"><a href="https://www.tiktok.com/@churro_cr">Churro_cr</a></li>
+    </ul>
+    <a href="https://discord.gg/r3EsTeU75" target="_blank"><button class="btn">ENTRAR A DISCORD</button></a>
+    <a href="#vivos"><button class="btn secondary">🔴 VER EN VIVO</button></a>
+  </section>
 
   <!-- LIVE -->
   <section class="live-section" id="vivos">
-    <!-- Tu código del live aquí -->
     <div class="live-grid">
       <div class="live-video">
-        <iframe src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0" 
-                frameborder="0" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0"
+          title="VAS A CAER AIMEP3"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
       <div class="chat-live">
         <h3>💬 CHAT DEL LIVE</h3>
@@ -241,7 +283,7 @@
     <a href="#inicio"><button class="btn secondary">inicio</button></a>
   </section>
 
-  <!-- ==================== PARTICIPANTES ==================== -->
+  <!-- PARTICIPANTES -->
   <section id="participantes" class="participantes-section">
     <h2 class="title">👥 PARTICIPANTES</h2>
     <p style="color:#ffcc00; margin-bottom: 20px;">Torneo Clash Royale - 3 de Julio</p>
@@ -270,10 +312,9 @@
       { name: "Mechico", tag: "JL0C8RLPU" },
       { name: "Anabancr", tag: "GYUQQCLV" },
       { name: "Ardentoas", tag: "RP0L2Y8C9" },
-      // Agrega más aquí
+      // Agrega más participantes aquí
     ];
 
-    // Combinados para búsqueda
     const allPlayers = [...hosts, ...participantes];
 
     function getRoyaleLink(tag) {
@@ -293,7 +334,6 @@
       return card;
     }
 
-    // Rotador
     function startRotator() {
       const container = document.getElementById('rotador');
       setInterval(() => {
@@ -304,14 +344,12 @@
       }, 10000);
     }
 
-    // Render todos
     function renderParticipantes(filtered = allPlayers) {
       const container = document.getElementById('participantes-grid');
       container.innerHTML = '';
       filtered.forEach(p => container.appendChild(createCard(p)));
     }
 
-    // Buscador (ahora busca en todos)
     function setupSearch() {
       const input = document.getElementById('search-input');
       input.addEventListener('input', (e) => {
@@ -333,7 +371,7 @@
       setupSearch();
     });
 
-    // Contadores (mantengo tu código original)
+    // Contadores
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
     setInterval(() => {
       const ahora = new Date().getTime();
