@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <title>TORNEO CLASH - 1 DE JULIO - info en discord</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Anton&display=swap');
-   
+  
     body {
       margin: 0;
       padding: 0;
@@ -18,7 +19,6 @@
       background-size: 600% 600%;
       animation: moveBg 10s ease infinite;
     }
-
     .hero {
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
         url('https://i.imgur.com/Brillo.png') center/cover no-repeat;
@@ -28,7 +28,6 @@
       flex-direction: column;
       justify-content: center;
     }
-
     h1 { font-size: 3rem; color: #ffcc00; text-shadow: 0 0 30px #ffcc00; margin: 10px 0; }
     .subtitle { font-size: 2rem; margin-bottom: 30px; }
     .countdown {
@@ -40,12 +39,10 @@
       max-width: 700px;
       border: 3px solid #ffcc00;
     }
-
     /* ==================== NUEVO DISEÑO LIVE ==================== */
     .live-section {
       padding: 40px 20px;
     }
-
     .live-grid{
       display: grid;
       grid-template-columns: 2.8fr 1.2fr;
@@ -53,7 +50,6 @@
       max-width: 1550px;
       margin: 0 auto 30px auto;
     }
-
     .live-video {
       position: relative;
       padding-top: 56.25%;
@@ -62,14 +58,12 @@
       background: #000;
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
     }
-
     .live-video iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
       border: none;
     }
-
     .chat-live {
       background: rgba(255,255,255,.08);
       border: 2px solid rgba(0, 255, 100, 0.4);
@@ -80,7 +74,6 @@
       font-size: 1rem;
       text-align: left;
     }
-
     .countdown-live {
       background: rgba(255,215,0,.1);
       border: 3px solid #ffd700;
@@ -91,13 +84,11 @@
       text-align: center;
       box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
     }
-
     .countdown-live h3 {
       font-size: 1.8rem;
       color: #ffd700;
       margin-bottom: 15px;
     }
-
     #live-countdown{
       font-size: 3rem;
       font-weight: bold;
@@ -105,14 +96,12 @@
       text-shadow: 0 0 25px #ffd700;
       margin: 15px 0;
     }
-
     /* Responsive */
     @media (max-width: 900px) {
       .live-grid { grid-template-columns: 1fr; gap: 25px; }
       .chat-live { min-height: 280px; }
       #live-countdown { font-size: 2.4rem; }
     }
-
     /* === Resto de estilos === */
     .premios { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 60px 20px; background: #0a0a0f; color: #e5e5e5; }
     .premios-box {
@@ -128,11 +117,9 @@
     .premios h2 { font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 15px; }
     .premios h3 { font-size: 16px; margin: 10px 0; font-weight: 400; color: #d6d6d6; }
     .premios h3:hover { color: #ffffff; }
-
     .host a{ display: block; color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
     .host a:hover{ color: #ffd700; text-shadow: 0 0 10px #ffd700; }
     .premios p { font-size: 14px; color: #bdbdbd; margin-top: 10px; }
-
     .boton {
       margin-top: 20px;
       padding: 12px 22px;
@@ -145,9 +132,7 @@
       transition: 0.2s;
     }
     .boton:hover { background: #e6e6e6; }
-
     html { scroll-behavior: smooth; }
-
     section {
       min-height: 100vh;
       padding: 40px 20px;
@@ -156,13 +141,10 @@
       justify-content: center;
       align-items: center;
     }
-
     .esports-section { background: radial-gradient(circle at top, #1a0033, #0a001f); }
     .title { font-size: 2.2rem; color: #ffcc00; text-shadow: 0 0 20px #ffcc00; }
-
     .card { background: rgba(0,0,0,0.6); border: 2px solid #ffcc00; padding: 20px; border-radius: 15px; margin: 15px 0; }
     .hosts { list-style: none; padding: 0; }
-
     .host {
       margin: 10px 0;
       padding: 12px;
@@ -174,7 +156,6 @@
       transform: translateX(10px) scale(1.05);
       box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
     }
-
     .btn {
       background: linear-gradient(45deg, #ffcc00, #ff9900);
       color: black;
@@ -190,7 +171,6 @@
       border: 2px solid #00f0ff;
       color: #00f0ff;
     }
-
     /* ==================== ESTILOS DE PATROCINADOR Y HOSTS ==================== */
 .card h3 a {
   color: #00e5ff;
@@ -198,40 +178,33 @@
   transition: 0.3s;
   text-shadow: 0 0 10px #00e5ff;
 }
-
 .card h3 a:hover {
   color: #00ffff;
   text-shadow: 0 0 15px #00ffff,
                0 0 25px #00ffff,
                0 0 35px #00ffff;
 }
-
 /* Colores específicos de Hosts */
 .solrac a:hover {
   color: #FFC512 !important;
   text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important;
 }
-
 .frost a:hover {
   color: #AFEEEE !important;
   text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important;
 }
-
 .katsu a:hover {
   color: #FF6F61 !important;
   text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important;
 }
-
 .enrique a:hover {
   color: #FFD700 !important;
   text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important;
 }
-
 .churro a:hover {
   color: #A9806A !important;
   text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important;
 }
-
     @keyframes moveBg {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -240,7 +213,6 @@
   </style>
 </head>
 <body>
-
   <!-- HERO -->
   <section class="hero" id="inicio">
     <h1>TORNEO CLASH</h1>
@@ -248,7 +220,6 @@
     <div class="countdown" id="event-countdown">Cargando cuenta regresiva...</div>
     <a href="#info"><button class="boton">↓ VER INFO</button></a>
   </section>
-
   <!-- PREMIOS -->
   <section id="info" class="premios">
     <div class="premios-box">
@@ -261,7 +232,6 @@
       <a href="#patrocinador"><button class="boton">↓ SIGUIENTE</button></a>
     </div>
   </section>
-
   <!-- PATROCINADOR -->
   <section id="patrocinador" class="esports-section">
     <h2 class="title">🤝 PATROCINADOR</h2>
@@ -280,33 +250,35 @@
     <a href="https://discord.gg/r3EsTeU75" target="_blank"><button class="btn">ENTRAR A DISCORD</button></a>
     <a href="#vivos"><button class="btn secondary">🔴 VER EN VIVO</button></a>
   </section>
-
   <!-- LIVE -->
   <section class="live-section" id="vivos">
     <div class="live-grid">
       <div class="live-video">
-        <iframe src="https://youtu.be/dg044OnzMpI?si=SvTRl8BOPRQ8b-Zo" allowfullscreen></iframe>
+        <iframe 
+          src="https://www.youtube.com/embed/dg044OnzMpI?autoplay=1&loop=1&playlist=dg044OnzMpI&controls=1&modestbranding=1&rel=0" 
+          title="VAS A CAER AIMEP3"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
       <div class="chat-live">
         <h3>💬 CHAT DEL LIVE</h3>
         <p>Chat aparecerá aquí cuando esté en vivo...</p>
       </div>
     </div>
-
     <!-- Contador grande abajo -->
     <div class="countdown-live">
       <h3>🔴 PRÓXIMO LIVE</h3>
       <div id="live-countdown">00:00:00</div>
       <p>Inicio del stream</p>
     </div>
-
     <a href="#inicio"><button class="btn secondary">inicio</button></a>
   </section>
-
   <!-- JS -->
   <script>
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
-
     setInterval(() => {
       const ahora = new Date().getTime();
       const distancia = fechaEvento - ahora;
@@ -319,7 +291,6 @@
       el.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
       if (distancia < 0) el.innerHTML = "¡EL TORNEO YA COMENZÓ!";
     }, 1000);
-
     setInterval(() => {
       const ahora = new Date().getTime();
       const distancia = fechaEvento - ahora;
