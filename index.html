@@ -39,9 +39,10 @@
       max-width: 700px;
       border: 3px solid #ffcc00;
     }
-
-    /* Live Styles */
-    .live-section { padding: 40px 20px; }
+    /* ==================== NUEVO DISEÑO LIVE ==================== */
+    .live-section {
+      padding: 40px 20px;
+    }
     .live-grid{
       display: grid;
       grid-template-columns: 2.8fr 1.2fr;
@@ -95,14 +96,13 @@
       text-shadow: 0 0 25px #ffd700;
       margin: 15px 0;
     }
-
+    /* Responsive */
     @media (max-width: 900px) {
       .live-grid { grid-template-columns: 1fr; gap: 25px; }
       .chat-live { min-height: 280px; }
       #live-countdown { font-size: 2.4rem; }
     }
-
-    /* Otros estilos */
+    /* === Resto de estilos === */
     .premios { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 60px 20px; background: #0a0a0f; color: #e5e5e5; }
     .premios-box {
       background: rgba(18, 18, 24, 0.95);
@@ -114,6 +114,12 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.5);
       text-align: left;
     }
+    .premios h2 { font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 15px; }
+    .premios h3 { font-size: 16px; margin: 10px 0; font-weight: 400; color: #d6d6d6; }
+    .premios h3:hover { color: #ffffff; }
+    .host a{ display: block; color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .host a:hover{ color: #ffd700; text-shadow: 0 0 10px #ffd700; }
+    .premios p { font-size: 14px; color: #bdbdbd; margin-top: 10px; }
     .boton {
       margin-top: 20px;
       padding: 12px 22px;
@@ -126,6 +132,30 @@
       transition: 0.2s;
     }
     .boton:hover { background: #e6e6e6; }
+    html { scroll-behavior: smooth; }
+    section {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .esports-section { background: radial-gradient(circle at top, #1a0033, #0a001f); }
+    .title { font-size: 2.2rem; color: #ffcc00; text-shadow: 0 0 20px #ffcc00; }
+    .card { background: rgba(0,0,0,0.6); border: 2px solid #ffcc00; padding: 20px; border-radius: 15px; margin: 15px 0; }
+    .hosts { list-style: none; padding: 0; }
+    .host {
+      margin: 10px 0;
+      padding: 12px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      transition: all 0.25s ease;
+    }
+    .host:hover {
+      transform: translateX(10px) scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+    }
     .btn {
       background: linear-gradient(45deg, #ffcc00, #ff9900);
       color: black;
@@ -141,18 +171,44 @@
       border: 2px solid #00f0ff;
       color: #00f0ff;
     }
+    /* ==================== ESTILOS DE PATROCINADOR Y HOSTS ==================== */
+    .card h3 a {
+      color: #00e5ff;
+      text-decoration: none;
+      transition: 0.3s;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+    .card h3 a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff,
+                   0 0 25px #00ffff,
+                   0 0 35px #00ffff;
+    }
+    /* Colores específicos de Hosts */
+    .solrac a:hover {
+      color: #FFC512 !important;
+      text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important;
+    }
+    .frost a:hover {
+      color: #AFEEEE !important;
+      text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important;
+    }
+    .katsu a:hover {
+      color: #FF6F61 !important;
+      text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important;
+    }
+    .enrique a:hover {
+      color: #FFD700 !important;
+      text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important;
+    }
+    .churro a:hover {
+      color: #A9806A !important;
+      text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important;
+    }
 
-    /* Colores Hosts */
-    .solrac a:hover { color: #FFC512 !important; text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important; }
-    .frost a:hover { color: #AFEEEE !important; text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important; }
-    .katsu a:hover { color: #FF6F61 !important; text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important; }
-    .enrique a:hover { color: #FFD700 !important; text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important; }
-    .churro a:hover { color: #A9806A !important; text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important; }
-
-    /* Participantes */
+    /* ==================== ESTILOS PARTICIPANTES ==================== */
     .participantes-section {
       background: radial-gradient(circle at top, #1a0033, #0a001f);
-      padding: 80px 20px;
     }
     .rotador, .participantes-grid {
       display: grid;
@@ -216,7 +272,6 @@
   </style>
 </head>
 <body>
-
   <!-- HERO -->
   <section class="hero" id="inicio">
     <h1>TORNEO CLASH</h1>
@@ -238,7 +293,7 @@
     </div>
   </section>
 
-  <!-- PATROCINADOR + HOSTS -->
+  <!-- PATROCINADOR -->
   <section id="patrocinador" class="esports-section">
     <h2 class="title">🤝 PATROCINADOR</h2>
     <div class="card">
@@ -283,7 +338,7 @@
     <a href="#inicio"><button class="btn secondary">inicio</button></a>
   </section>
 
-  <!-- PARTICIPANTES -->
+  <!-- ==================== PARTICIPANTES ==================== -->
   <section id="participantes" class="participantes-section">
     <h2 class="title">👥 PARTICIPANTES</h2>
     <p style="color:#ffcc00; margin-bottom: 20px;">Torneo Clash Royale - 3 de Julio</p>
@@ -299,6 +354,7 @@
 
   <!-- JS -->
   <script>
+    // ==================== DATOS PARTICIPANTES ====================
     const hosts = [
       { name: "Enrique", tag: "UU8Q2RY82" },
       { name: "Cristian CB", tag: "P8UJJR09Y" },
@@ -312,7 +368,7 @@
       { name: "Mechico", tag: "JL0C8RLPU" },
       { name: "Anabancr", tag: "GYUQQCLV" },
       { name: "Ardentoas", tag: "RP0L2Y8C9" },
-      // Agrega más participantes aquí
+      // Agrega más aquí
     ];
 
     const allPlayers = [...hosts, ...participantes];
@@ -330,10 +386,13 @@
           ${player.tag ? `<p class="player-tag">#${player.tag}</p>` : ''}
         </div>
       `;
-      card.addEventListener('click', () => window.open(getRoyaleLink(player.tag), '_blank'));
+      card.addEventListener('click', () => {
+        window.open(getRoyaleLink(player.tag), '_blank');
+      });
       return card;
     }
 
+    // Rotador
     function startRotator() {
       const container = document.getElementById('rotador');
       setInterval(() => {
@@ -358,20 +417,19 @@
           renderParticipantes(allPlayers);
           return;
         }
-        const filtered = allPlayers.filter(p => 
-          p.name.toLowerCase().includes(term)
-        );
+        const filtered = allPlayers.filter(p => p.name.toLowerCase().includes(term));
         renderParticipantes(filtered);
       });
     }
 
+    // Inicializar Participantes
     document.addEventListener('DOMContentLoaded', () => {
       startRotator();
       renderParticipantes();
       setupSearch();
     });
 
-    // Contadores
+    // ==================== CONTADORES (Tu código original) ====================
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
     setInterval(() => {
       const ahora = new Date().getTime();
