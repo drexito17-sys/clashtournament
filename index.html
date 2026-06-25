@@ -172,9 +172,39 @@
       color: #00f0ff;
     }
 
+    /* ==================== COLORES PERSONALIZADOS DE HOSTS ==================== */
+    .solrac a:hover {
+      color: #FFC512 !important;
+      text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important;
+    }
+    .frost a:hover {
+      color: #AFEEEE !important;
+      text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important;
+    }
+    .katsu a:hover {
+      color: #FF6F61 !important;
+      text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important;
+    }
+    .enrique a:hover {
+      color: #FFD700 !important;
+      text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important;
+    }
+    .churro a:hover {
+      color: #A9806A !important;
+      text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important;
+    }
+
     /* ==================== ESTILOS PARTICIPANTES ==================== */
     .participantes-section {
       background: radial-gradient(circle at top, #1a0033, #0a001f);
+    }
+    .rotador {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px auto;
     }
     .participantes-grid {
       display: grid;
@@ -182,7 +212,6 @@
       gap: 18px;
       width: 100%;
       max-width: 1400px;
-      margin-top: 30px;
     }
     .participant-card {
       background: rgba(0,0,0,0.7);
@@ -220,7 +249,12 @@
       max-width: 500px;
       font-family: 'Press Start 2P', cursive;
       color: white;
-      margin-bottom: 20px;
+      margin: 20px 0;
+    }
+    .search-box:focus {
+      outline: none;
+      border-color: #ffd700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
     }
 
     @keyframes moveBg {
@@ -272,23 +306,6 @@
     <a href="#vivos"><button class="btn secondary">🔴 VER EN VIVO</button></a>
   </section>
 
-  <!-- ==================== NUEVA SECCIÓN: PARTICIPANTES ==================== -->
-  <section id="participantes" class="participantes-section">
-    <h2 class="title">👥 PARTICIPANTES</h2>
-    <p style="color:#ffcc00; margin-bottom: 30px;">Torneo Clash Royale - 3 de Julio</p>
-
-    <!-- Hosts -->
-    <h3 style="color:#ffd700; margin: 30px 0 15px;">👑 HOSTS</h3>
-    <div id="hosts-grid" class="participantes-grid"></div>
-
-    <!-- Jugadores -->
-    <h3 style="color:#ffcc00; margin: 40px 0 15px;">⚔️ JUGADORES</h3>
-    
-    <input type="text" id="search-input" class="search-box" placeholder="Buscar jugador...">
-
-    <div id="participantes-grid" class="participantes-grid"></div>
-  </section>
-
   <!-- LIVE -->
   <section class="live-section" id="vivos">
     <div class="live-grid">
@@ -315,9 +332,26 @@
     <a href="#inicio"><button class="btn secondary">inicio</button></a>
   </section>
 
+  <!-- ==================== SECCIÓN PARTICIPANTES (ABAJO) ==================== -->
+  <section id="participantes" class="participantes-section">
+    <h2 class="title">👥 PARTICIPANTES</h2>
+    <p style="color:#ffcc00; margin-bottom: 20px;">Torneo Clash Royale - 3 de Julio</p>
+
+    <!-- Rotador de 4 participantes -->
+    <h3 style="color:#ffd700; margin: 20px 0 15px;">🔄 EN DESTACADOS</h3>
+    <div id="rotador" class="rotador"></div>
+
+    <!-- Buscador -->
+    <input type="text" id="search-input" class="search-box" placeholder="🔍 Buscar jugador...">
+
+    <!-- Todos los participantes -->
+    <h3 style="color:#ffcc00; margin: 30px 0 15px;">⚔️ TODOS LOS JUGADORES</h3>
+    <div id="participantes-grid" class="participantes-grid"></div>
+  </section>
+
   <!-- JS -->
   <script>
-    // ==================== DATOS PARTICIPANTES ====================
+    // ==================== DATOS ====================
     const hosts = [
       { name: "Enrique", tag: "UU8Q2RY82" },
       { name: "Cristian CB", tag: "P8UJJR09Y" },
@@ -331,8 +365,7 @@
       { name: "Mechico", tag: "JL0C8RLPU" },
       { name: "Anabancr", tag: "GYUQQCLV" },
       { name: "Ardentoas", tag: "RP0L2Y8C9" },
-      // Agrega más aquí cuando los confirmes:
-      // { name: "Nombre", tag: "TAG" },
+      // Agrega más aquí
     ];
 
     // ==================== FUNCIONES ====================
@@ -340,28 +373,28 @@
       return tag ? `https://royaleapi.com/player/${tag}` : `https://royaleapi.com/`;
     }
 
-    function createCard(player, isHost = false) {
+    function createCard(player) {
       const card = document.createElement('div');
-      card.className = `participant-card ${isHost ? 'host-card' : ''}`;
-      
+      card.className = `participant-card`;
       card.innerHTML = `
         <div>
           <strong class="player-name">${player.name}</strong>
           ${player.tag ? `<p class="player-tag">#${player.tag}</p>` : ''}
         </div>
       `;
-
-      card.addEventListener('click', () => {
-        window.open(getRoyaleLink(player.tag), '_blank');
-      });
-
+      card.addEventListener('click', () => window.open(getRoyaleLink(player.tag), '_blank'));
       return card;
     }
 
-    function renderHosts() {
-      const container = document.getElementById('hosts-grid');
-      container.innerHTML = '';
-      hosts.forEach(host => container.appendChild(createCard(host, true)));
+    // Rotador automático
+    function startRotator() {
+      const container = document.getElementById('rotador');
+      setInterval(() => {
+        container.innerHTML = '';
+        const shuffled = [...participantes].sort(() => Math.random() - 0.5);
+        const selected = shuffled.slice(0, 4);
+        selected.forEach(p => container.appendChild(createCard(p)));
+      }, 10000); // cada 10 segundos
     }
 
     function renderParticipantes(filtered = participantes) {
@@ -370,10 +403,11 @@
       filtered.forEach(p => container.appendChild(createCard(p)));
     }
 
+    // Buscador
     function setupSearch() {
       const input = document.getElementById('search-input');
       input.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
+        const term = e.target.value.toLowerCase().trim();
         const filtered = participantes.filter(p => 
           p.name.toLowerCase().includes(term)
         );
@@ -381,14 +415,14 @@
       });
     }
 
-    // Inicializar participantes
+    // Inicializar
     document.addEventListener('DOMContentLoaded', () => {
-      renderHosts();
+      startRotator();
       renderParticipantes();
       setupSearch();
     });
 
-    // ==================== CONTADORES EXISTENTES ====================
+    // ==================== CONTADORES ====================
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
     setInterval(() => {
       const ahora = new Date().getTime();
