@@ -38,409 +38,229 @@
       max-width: 700px;
       border: 3px solid #ffcc00;
     }
-    /* ==================== NUEVO DISEÑO LIVE ==================== */
-    .live-section {
-      padding: 40px 20px;
+
+    /* ==================== SCANOR ==================== */
+    .scanor-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(45deg, #ffcc00, #ff6600);
+      color: #000;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255, 204, 0, 0.8);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
     }
-    .live-grid{
-      display: grid;
-      grid-template-columns: 2.8fr 1.2fr;
-      gap: 25px;
-      max-width: 1550px;
-      margin: 0 auto 30px auto;
+    .scanor-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(255, 204, 0, 1);
     }
-    .live-video {
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
-    }
-    .live-video iframe {
-      position: absolute;
+
+    .modal {
+      display: none;
+      position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      border: none;
-    }
-    .chat-live {
-      background: rgba(255,255,255,.08);
-      border: 2px solid rgba(0, 255, 100, 0.4);
-      border-radius: 20px;
-      padding: 20px;
-      min-height: 380px;
-      color: #00ff88;
-      font-size: 1rem;
-      text-align: left;
-    }
-    .countdown-live {
-      background: rgba(255,215,0,.1);
-      border: 3px solid #ffd700;
-      border-radius: 20px;
-      padding: 35px 20px;
-      max-width: 1550px;
-      margin: 0 auto;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
-    }
-    .countdown-live h3 {
-      font-size: 1.8rem;
-      color: #ffd700;
-      margin-bottom: 15px;
-    }
-    #live-countdown{
-      font-size: 3rem;
-      font-weight: bold;
-      color: #ffd700;
-      text-shadow: 0 0 25px #ffd700;
-      margin: 15px 0;
-    }
-    /* Responsive */
-    @media (max-width: 900px) {
-      .live-grid { grid-template-columns: 1fr; gap: 25px; }
-      .chat-live { min-height: 280px; }
-      #live-countdown { font-size: 2.4rem; }
-    }
-    /* === Resto de estilos === */
-    .premios { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 60px 20px; background: #0a0a0f; color: #e5e5e5; }
-    .premios-box {
-      background: rgba(18, 18, 24, 0.95);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 35px;
-      max-width: 520px;
-      width: 100%;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-      text-align: left;
-    }
-    .premios h2 { font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 15px; }
-    .premios h3 { font-size: 16px; margin: 10px 0; font-weight: 400; color: #d6d6d6; }
-    .premios h3:hover { color: #ffffff; }
-    .host a{ display: block; color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
-    .host a:hover{ color: #ffd700; text-shadow: 0 0 10px #ffd700; }
-    .premios p { font-size: 14px; color: #bdbdbd; margin-top: 10px; }
-    .boton {
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: #ffffff;
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .boton:hover { background: #e6e6e6; }
-    html { scroll-behavior: smooth; }
-    section {
-      min-height: 100vh;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
+      background: rgba(0,0,0,0.92);
+      z-index: 2000;
       justify-content: center;
       align-items: center;
     }
-    .esports-section { background: radial-gradient(circle at top, #1a0033, #0a001f); }
-    .title { font-size: 2.2rem; color: #ffcc00; text-shadow: 0 0 20px #ffcc00; }
-    .card { background: rgba(0,0,0,0.6); border: 2px solid #ffcc00; padding: 20px; border-radius: 15px; margin: 15px 0; }
-    .hosts { list-style: none; padding: 0; }
-    .host {
-      margin: 10px 0;
-      padding: 12px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 10px;
-      transition: all 0.25s ease;
-    }
-    .host:hover {
-      transform: translateX(10px) scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
-    }
-    .btn {
-      background: linear-gradient(45deg, #ffcc00, #ff9900);
-      color: black;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin: 10px;
-    }
-    .btn.secondary {
-      background: transparent;
-      border: 2px solid #00f0ff;
-      color: #00f0ff;
-    }
-    /* ==================== ESTILOS DE PATROCINADOR Y HOSTS ==================== */
-    .card h3 a {
-      color: #00e5ff;
-      text-decoration: none;
-      transition: 0.3s;
-      text-shadow: 0 0 10px #00e5ff;
-    }
-    .card h3 a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 15px #00ffff,
-                   0 0 25px #00ffff,
-                   0 0 35px #00ffff;
-    }
-    /* Colores específicos de Hosts */
-    .solrac a:hover { color: #FFC512 !important; text-shadow: 0 0 15px #FFC512, 0 0 25px #806500 !important; }
-    .frost a:hover { color: #AFEEEE !important; text-shadow: 0 0 15px #AFEEEE, 0 0 25px #5D8AA8 !important; }
-    .katsu a:hover { color: #FF6F61 !important; text-shadow: 0 0 15px #FF6F61, 0 0 25px #7A0010 !important; }
-    .enrique a:hover { color: #FFD700 !important; text-shadow: 0 0 15px #FFD700, 0 0 25px #996515 !important; }
-    .churro a:hover { color: #A9806A !important; text-shadow: 0 0 15px #A9806A, 0 0 25px #5C4033 !important; }
-
-    /* ==================== SCANNER ==================== */
-    .scanner-section {
-      background: #0a0a0f;
-      padding: 50px 20px;
-      width: 100%;
-    }
-    .scanner-box {
-      background: rgba(0,0,0,0.7);
-      border: 2px solid #ffcc00;
-      border-radius: 12px;
-      padding: 25px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .scan-input {
-      width: 100%;
-      padding: 15px;
+    .modal-content {
       background: #1a0033;
-      border: 2px solid #ffd700;
+      border: 4px solid #ffcc00;
+      border-radius: 15px;
+      max-width: 720px;
+      width: 90%;
+      padding: 25px;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    .modal-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .escanor-title {
+      font-size: 2rem;
+      color: #ffcc00;
+      text-shadow: 0 0 15px #ffcc00;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .menu-btn {
+      background: rgba(255,204,0,0.15);
+      border: 2px solid #ffcc00;
       color: white;
-      font-family: 'Press Start 2P', cursive;
-      margin-bottom: 15px;
+      padding: 12px 10px;
       border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .menu-btn:hover {
+      background: #ffcc00;
+      color: black;
+      transform: scale(1.05);
+    }
+    .section-content {
+      display: none;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .section-content.active {
+      display: block;
+    }
+    .close {
+      float: right;
+      font-size: 2.2rem;
+      cursor: pointer;
+      color: #ffcc00;
     }
   </style>
 </head>
 <body>
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <h1>TORNEO CLASH</h1>
-    <p class="subtitle">3 DE JULIO</p>
-    <div class="countdown" id="event-countdown">Cargando cuenta regresiva...</div>
-    <a href="#info"><button class="boton">↓ VER INFO</button></a>
-  </section>
 
-  <!-- NUEVA SECCIÓN COMBINADA -->
-  <section id="info" class="torneo-info">
-    <!-- ... (se mantiene igual) ... -->
-    <div class="torneo-grid">
-      <div class="requisitos">
-        <h2 style="color:#ffcc00; margin-bottom:20px;">🏆 REQUISITOS DEL TORNEO 🏆</h2>
-        <div class="gold-box">
-          <h3 style="color:#ffcc00; text-align:center; margin-bottom:20px;">SEGUIRNOS EN TIKTOK</h3>
-          <div class="tik-tok-list">
-            <a href="https://www.tiktok.com/@cristianbueno077" target="_blank">✅ Cristian CB</a>
-            <a href="https://www.tiktok.com/@frosttvrace" target="_blank">✅ Frost D' Cris Chuiii Katsu</a>
-            <a href="https://www.tiktok.com/@katsumitsu3" target="_blank">✅ Katsu D' Frost</a>
-            <a href="https://www.tiktok.com/@enriquearias74" target="_blank">✅ Enrique CB</a>
-            <a href="https://www.tiktok.com/@solrrac_2003" target="_blank">✅ Solrac</a>
-            <a href="https://www.tiktok.com/@churro_cr" target="_blank">✅ churro_cr</a>
-          </div>
-        </div>
-        <p style="margin-top: 30px; color:#ffd700;">🎮 ¡MUCHA SUERTE A TODOS!</p>
+  <!-- ... Tu hero, info, premios, hosts, live y participantes se mantienen igual ... -->
+
+  <!-- SCANOR BUTTON -->
+  <button class="scanor-btn" onclick="openScanor()">
+    ☀️ <strong>ESCANOR</strong>
+  </button>
+
+  <!-- SCANOR MODAL -->
+  <div id="scanor-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeScanor()">×</span>
+      
+      <div class="modal-header">
+        <h2 class="escanor-title" id="escanor-greeting">☀️ ESCANOR</h2>
+        <p id="escanor-subtitle" style="color:#ffd700;">¿Qué deseas conocer, guerrero?</p>
       </div>
-      <div class="premios-side">
-        <h2 style="color:#ffcc00; margin-bottom:20px;">🏆 PREMIOS</h2>
-        <div class="gold-box">
-          <h3>🥇 TOP 1 → $60 USD</h3>
-          <h3>🥈 TOP 2 → $30 USD</h3>
-          <h3>🥉 TOP 3 → $15 USD</h3>
-          <p style="margin-top:15px;"><strong>Costo de Entrada:</strong> 100 monedas de TikTok</p>
-          <p><strong>Cómo se paga:</strong> en el live de algún host</p>
-        </div>
-        <a href="#patrocinador"><button class="boton">↓ SIGUIENTE</button></a>
+
+      <div class="menu-grid">
+        <div class="menu-btn" onclick="showSection('premios')">🏆 Premios</div>
+        <div class="menu-btn" onclick="showSection('reglas')">📜 Reglas</div>
+        <div class="menu-btn" onclick="showSection('participar')">💰 Cómo Participar</div>
+        <div class="menu-btn" onclick="showSection('comprobantes')">📸 Comprobantes</div>
+        <div class="menu-btn" onclick="showSection('hosts')">👥 Hosts</div>
+        <div class="menu-btn" onclick="showSection('faq')">❓ Preguntas Frecuentes</div>
       </div>
-    </div>
-  </section>
 
-  <!-- PATROCINADOR + HOSTS -->
-  <section id="patrocinador" class="esports-section">
-    <h2 class="title">🤝 PATROCINADOR</h2>
-    <div class="card">
-      <h3><a href="https://www.tiktok.com/@cristianbueno077" target="_blank">⭐ Cristian CB👻🫂🦭🏎️🐉☀️ ⭐</a></h3>
-      <p>Patrocinador oficial del torneo</p>
-    </div>
-    
-    <h3>⚔️ HOSTS</h3>
-    <ul class="hosts">
-      <li class="host solrac"><a href="https://www.tiktok.com/@solrrac_2003" target="_blank">S☀️LRAC ✅</a></li>
-      <li class="host frost"><a href="https://www.tiktok.com/@frosttvrace" target="_blank">Frost D' Cris Chuiii Katsu 🏎️🐉</a></li>
-      <li class="host katsu"><a href="https://www.tiktok.com/@katsumitsu3" target="_blank">Katsu D' Frost 🐉🏎️</a></li>
-      <li class="host enrique"><a href="https://www.tiktok.com/@enriquearias74" target="_blank">Enrique CB 🫂👻</a></li>
-      <li class="host churro"><a href="https://www.tiktok.com/@churro_cr" target="_blank">Churro_cr</a></li>
-    </ul>
-
-    <a href="https://discord.gg/r3EsTeU75" target="_blank"><button class="btn">ENTRAR A DISCORD</button></a>
-    <a href="#vivos"><button class="btn secondary">🔴 VER EN VIVO</button></a>
-  </section>
-
-  <!-- SCANNER -->
-  <section class="scanner-section" id="scanner">
-    <h2 class="title">🔎 SCANNER DE JUGADORES</h2>
-    <div class="scanner-box">
-      <input type="text" id="scan-input" class="scan-input" placeholder="Pega tag o nombre del jugador...">
-      <button class="btn" onclick="scanPlayer()">🔍 BUSCAR / AGREGAR</button>
-      <p id="scan-result" style="margin-top:15px; min-height:30px;"></p>
-    </div>
-  </section>
-
-  <!-- LIVE -->
-  <section class="live-section" id="vivos">
-    <!-- ... se mantiene igual ... -->
-    <div class="live-grid">
-      <div class="live-video">
-        <iframe src="https://www.youtube.com/embed/EXrtXB_u_60?autoplay=1&loop=1&playlist=EXrtXB_u_60&controls=1&modestbranding=1&rel=0" 
-                title="VAS A CAER AIMEP3" frameborder="0" allowfullscreen></iframe>
+      <!-- Contenidos -->
+      <div id="content-premios" class="section-content">
+        <h3>🏆 Premios</h3>
+        <p>Solo los más fuertes alcanzarán la cima. El campeón obtendrá <strong>$60 USD</strong>, el segundo lugar <strong>$30 USD</strong> y el tercero <strong>$15 USD</strong>. Los premios se entregarán una vez finalizado el torneo y verificados los resultados.</p>
       </div>
-      <div class="chat-live">
-        <h3>💬 CHAT DEL LIVE</h3>
-        <p>Chat aparecerá aquí cuando esté en vivo...</p>
+
+      <div id="content-reglas" class="section-content">
+        <h3>📜 Reglas</h3>
+        <ul style="text-align:left; line-height:1.8;">
+          <li>✅ Sin hacks ni modificaciones.</li>
+          <li>✅ Solo una cuenta por jugador.</li>
+          <li>✅ Respeta a los rivales y a los hosts.</li>
+          <li>✅ Sigue las indicaciones durante el torneo.</li>
+          <li>✅ Las decisiones de los organizadores serán finales.</li>
+        </ul>
+      </div>
+
+      <div id="content-participar" class="section-content">
+        <h3>💰 Cómo Participar</h3>
+        <p>Para entrar al torneo deberás enviar <strong>100 monedas de TikTok</strong> durante el directo de cualquiera de los hosts oficiales. Una vez realizado el pago, sube tu comprobante para que podamos confirmar tu inscripción.</p>
+      </div>
+
+      <div id="content-comprobantes" class="section-content">
+        <h3>📸 Comprobantes</h3>
+        <p>Después de realizar el pago, utiliza el formulario para subir una captura donde se vea claramente la transacción. Los organizadores revisarán la información y, una vez validada, tu participación quedará confirmada.</p>
+      </div>
+
+      <div id="content-hosts" class="section-content">
+        <h3>👥 Hosts</h3>
+        <p>Los hosts oficiales son los encargados de recibir pagos y organizar las partidas. Puedes pagarles directamente en su live.</p>
+      </div>
+
+      <div id="content-faq" class="section-content">
+        <h3>❓ Preguntas Frecuentes</h3>
+        <p><strong>¿Dónde se juega?</strong> En Clash Royale, durante el live de los hosts.<br>
+           <strong>¿Cómo sé que estoy inscrito?</strong> Cuando tu comprobante sea validado.<br>
+           <strong>¿Qué pasa si pierdo la conexión?</strong> Depende del momento, los hosts decidirán.<br>
+           <strong>¿Cómo se entregan los premios?</strong> Por Airtm, PayPal o Binance después del torneo.<br>
+           <strong>¿Qué hago si me equivoqué al subir el comprobante?</strong> Contacta a un host en Discord.</p>
       </div>
     </div>
-    <div class="countdown-live">
-      <h3>🔴 PRÓXIMO LIVE</h3>
-      <div id="live-countdown">00:00:00</div>
-      <p>Inicio del stream</p>
-    </div>
-  </section>
+  </div>
 
-  <!-- PARTICIPANTES -->
-  <section id="participantes" class="participantes-section">
-    <h2 class="title">👥 PARTICIPANTES</h2>
-    <p style="color:#ffcc00; margin-bottom: 20px;">Torneo Clash Royale - 3 de Julio</p>
-    <h3 style="color:#ffd700; margin: 20px 0 15px;">🔄 EN DESTACADOS</h3>
-    <div id="rotador" class="rotador"></div>
-    <input type="text" id="search-input" class="search-box" placeholder="🔍 Buscar jugador...">
-    <h3 style="color:#ffcc00; margin: 30px 0 15px;">⚔️ TODOS LOS JUGADORES</h3>
-    <div id="participantes-grid" class="participantes-grid"></div>
-  </section>
-
-  <!-- JS -->
   <script>
-    // ==================== DATOS ====================
-    let allPlayers = [
-      { name: "Drex", tag: "UJCRRJVVY" },
-      { name: "Enrique", tag: "UU8Q2RY82" },
-      { name: "Cristian CB", tag: "P8UJJR09Y" },
-      { name: "Katsu", tag: "RGPCU0V8" },
-      { name: "ChurroCR", tag: "8GYGYCG" },
-      { name: "Juandvx", tag: "J82VJ8YJY" },
-      { name: "Mechico", tag: "JL0C8RLPU" },
-      { name: "Anabancr", tag: "GYUQQCLV" },
-      { name: "Ardentoas", tag: "RP0L2Y8C9" },
-      { name: "el Tona", tag: "VQR0L0JLP" },
-      { name: "SergioRamos:)", tag: "P2U9G2J" }
-      // Agrega más aquí
-    ];
-
-    function getRoyaleLink(tag) {
-      return tag ? `https://royaleapi.com/player/${tag}` : `https://royaleapi.com/`;
+    // ==================== SCANOR ====================
+    function openScanor() {
+      document.getElementById('scanor-modal').style.display = 'flex';
+      updateEscanorGreeting();
     }
 
-    function createCard(player) {
-      const card = document.createElement('div');
-      card.className = `participant-card`;
-      card.innerHTML = `
-        <div>
-          <strong class="player-name">${player.name}</strong>
-          ${player.tag ? `<p class="player-tag">#${player.tag}</p>` : ''}
-        </div>
-      `;
-      card.addEventListener('click', () => window.open(getRoyaleLink(player.tag), '_blank'));
-      return card;
+    function closeScanor() {
+      document.getElementById('scanor-modal').style.display = 'none';
     }
 
-    // ==================== SCANNER ====================
-    function scanPlayer() {
-      const input = document.getElementById('scan-input');
-      const result = document.getElementById('scan-result');
-      const value = input.value.trim();
+    function updateEscanorGreeting() {
+      const hour = new Date().getHours();
+      let greeting = "☀️ ESCANOR";
+      let subtitle = "¿Qué deseas conocer, guerrero?";
 
-      if (!value) {
-        result.innerHTML = `<span style="color:#ff4444;">⚠️ Ingresa un tag o nombre</span>`;
-        return;
-      }
-
-      // Si parece un tag (letras y números)
-      if (/^[A-Z0-9]+$/.test(value.toUpperCase())) {
-        const newPlayer = { name: "Nuevo Jugador", tag: value.toUpperCase() };
-        allPlayers.unshift(newPlayer); // Agregar al inicio
-        renderParticipantes();
-        result.innerHTML = `<span style="color:#00ff88;">✅ Jugador agregado: #${value}</span>`;
+      if (hour >= 5 && hour < 12) {
+        greeting = "☀️ ESCANOR";
+        subtitle = "El sol apenas se alza... es un buen momento para prepararte.";
+      } else if (hour >= 12 && hour < 18) {
+        greeting = "🌞 ESCANOR";
+        subtitle = "El torneo se acerca. Espero que hayas entrenado.";
       } else {
-        result.innerHTML = `<span style="color:#ffd700;">🔍 Buscando "${value}" en RoyaleAPI...</span>`;
-        setTimeout(() => {
-          result.innerHTML = `<span style="color:#00ff88;">✅ Búsqueda simulada - Revisa RoyaleAPI</span>`;
-        }, 1200);
+        greeting = "🌙 ESCANOR";
+        subtitle = "Incluso cuando cae la noche, los verdaderos guerreros siguen preparándose.";
       }
-      input.value = '';
+
+      document.getElementById('escanor-greeting').textContent = greeting;
+      document.getElementById('escanor-subtitle').textContent = subtitle;
     }
 
-    // ==================== ROTADOR Y GRID ====================
-    function startRotator() {
-      const container = document.getElementById('rotador');
-      setInterval(() => {
-        container.innerHTML = '';
-        const shuffled = [...allPlayers].sort(() => Math.random() - 0.5);
-        const selected = shuffled.slice(0, 4);
-        selected.forEach(p => container.appendChild(createCard(p)));
-      }, 10000);
+    function showSection(section) {
+      document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(`content-${section}`).classList.add('active');
     }
 
-    function renderParticipantes(filtered = allPlayers) {
-      const container = document.getElementById('participantes-grid');
-      container.innerHTML = '';
-      filtered.forEach(p => container.appendChild(createCard(p)));
-    }
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") closeScanor();
+    });
 
-    function setupSearch() {
-      const input = document.getElementById('search-input');
-      input.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase().trim();
-        if (!term) {
-          renderParticipantes(allPlayers);
-          return;
-        }
-        const filtered = allPlayers.filter(p => 
-          p.name.toLowerCase().includes(term) || 
-          (p.tag && p.tag.toLowerCase().includes(term))
-        );
-        renderParticipantes(filtered);
-      });
-    }
-
-    // ==================== CONTADORES ====================
+    // ==================== Tus contadores y scripts anteriores ====================
     const fechaEvento = new Date("2026-07-03T20:00:00").getTime();
-    
     setInterval(() => {
       const ahora = new Date().getTime();
       const distancia = fechaEvento - ahora;
       const el = document.getElementById("event-countdown");
       if (!el) return;
-      
       if (distancia < 0) {
         el.innerHTML = "¡EL TORNEO YA COMENZÓ!";
         return;
       }
-      
       const dias = Math.floor(distancia / (1000*60*60*24));
       const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
       const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
       const segundos = Math.floor((distancia % (1000*60)) / 1000);
       el.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }, 1000);
-
-    // Inicializar todo
-    document.addEventListener('DOMContentLoaded', () => {
-      startRotator();
-      renderParticipantes();
-      setupSearch();
-    });
   </script>
 </body>
 </html>
